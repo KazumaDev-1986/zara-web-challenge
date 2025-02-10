@@ -8,6 +8,9 @@
     "jsx": "react-jsx",
     "moduleResolution": "node",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "target": "ESNext",
+    "module": "ESNext",
+    "isolatedModules": true
   }
 }
