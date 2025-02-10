@@ -9,16 +9,19 @@ import {
   urlIndex,
 } from './constants/appUrls';
 import { NotFoundPage } from './pages/NotFoundPage';
+import RootLoyout from './layouts/RootLayout';
 
 function App() {
   return (
     <CharacterProvider>
-      <Switch>
-        <Route path={urlIndex} component={HomePage} />
-        <Route path={urlCharacters} component={CharacterListPage} />
-        <Route path={urlCharactersById} component={CharacterDetailPage} />
-        <Route component={NotFoundPage} />
-      </Switch>
+      <RootLoyout>
+        <Switch>
+          <Route path={urlIndex} component={HomePage} />
+          <Route path={urlCharacters} component={CharacterListPage} />
+          <Route path={urlCharactersById} component={CharacterDetailPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+      </RootLoyout>
     </CharacterProvider>
   );
 }

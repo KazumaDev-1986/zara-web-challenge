@@ -1,0 +1,12 @@
+.favoriteLink {
+    width: var(--size-7);
+    height: var(--size-4-75);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.counter{
+    font-size: var(--font-size-2);
+    color: var(--text-color-light)
+}

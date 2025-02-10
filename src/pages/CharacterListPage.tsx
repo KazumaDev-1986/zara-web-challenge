@@ -13,7 +13,11 @@ const CharacterListPage = () => {
   return (
     <>
       <h1>Character List</h1>
-      <Grid>{characters?.map((character) => <div>{character.name}</div>)}</Grid>
+      <Grid>
+        {characters?.map((character) => (
+          <div key={character.id}>{character.name}</div>
+        ))}
+      </Grid>
     </>
   );
 };
