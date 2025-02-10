@@ -4,7 +4,7 @@ import { Link } from 'wouter';
 import { Character } from '../types/CharacterList';
 import { urlCharactersByIdBuilder } from '../constants/appUrls';
 
-const CharacterList = () => {
+const CharacterListPage = () => {
   const [characters, setCharacters] = useState<Character[] | null>([]);
 
   useEffect(() => {
@@ -27,4 +27,4 @@ const CharacterList = () => {
   );
 };
 
-export default CharacterList;
+export default CharacterListPage;

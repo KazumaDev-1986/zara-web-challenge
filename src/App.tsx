@@ -1,7 +1,7 @@
 import { Route, Switch } from 'wouter';
-import CharacterList from './pages/CharacterList';
-import CharacterDetail from './pages/CharacterDetail';
-import Home from './pages/Home';
+import CharacterListPage from './pages/CharacterListPage';
+import CharacterDetailPage from './pages/CharacterDetailPage';
+import HomePage from './pages/HomePage';
 import { CharacterProvider } from './context/CharacterContext';
 import {
   urlCharacters,
@@ -15,9 +15,9 @@ function App() {
     <CharacterProvider>
       <div>
         <Switch>
-          <Route path={urlIndex} component={Home} />
-          <Route path={urlCharacters} component={CharacterList} />
-          <Route path={urlCharactersById} component={CharacterDetail} />
+          <Route path={urlIndex} component={HomePage} />
+          <Route path={urlCharacters} component={CharacterListPage} />
+          <Route path={urlCharactersById} component={CharacterDetailPage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

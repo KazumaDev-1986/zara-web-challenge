@@ -2,15 +2,12 @@ import { useEffect, useState } from 'react';
 import { fetchCharacterById } from '../api/characters.api';
 import { useRoute } from 'wouter';
 import { urlCharactersById } from '../constants/appUrls';
+import { CharacterDetailApiResponse } from '../types/CharacterDetail';
 
-interface CharacterDetailData {
-  id: string;
-  name: string;
-  description: string;
-}
-
-const CharacterDetail = () => {
-  const [character, setCharacter] = useState<CharacterDetailData | null>(null);
+const CharacterDetailPage = () => {
+  const [character, setCharacter] = useState<CharacterDetailApiResponse | null>(
+    null
+  );
   const params = useRoute<{ id: string }>(urlCharactersById)[1];
 
   useEffect(() => {
@@ -33,4 +30,4 @@ const CharacterDetail = () => {
   );
 };
 
-export default CharacterDetail;
+export default CharacterDetailPage;
