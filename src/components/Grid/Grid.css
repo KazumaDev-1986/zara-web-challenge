@@ -1,0 +1,29 @@
+.grid-container {
+    display: grid;
+    gap: 16px;
+    padding: 16px;
+  }
+  
+  @media (min-width: 1024px) {
+    .grid-container {
+      grid-template-columns: repeat(7, 1fr);
+    }
+  }
+  
+  @media (max-width: 1024px) and (min-width: 768px) {
+    .grid-container {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  
+  @media (max-width: 768px) and (min-width: 500px) {
+    .grid-container {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .grid-container {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }

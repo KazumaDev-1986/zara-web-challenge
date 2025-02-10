@@ -13,14 +13,12 @@ import { NotFoundPage } from './pages/NotFoundPage';
 function App() {
   return (
     <CharacterProvider>
-      <div>
-        <Switch>
-          <Route path={urlIndex} component={HomePage} />
-          <Route path={urlCharacters} component={CharacterListPage} />
-          <Route path={urlCharactersById} component={CharacterDetailPage} />
-          <Route component={NotFoundPage} />
-        </Switch>
-      </div>
+      <Switch>
+        <Route path={urlIndex} component={HomePage} />
+        <Route path={urlCharacters} component={CharacterListPage} />
+        <Route path={urlCharactersById} component={CharacterDetailPage} />
+        <Route component={NotFoundPage} />
+      </Switch>
     </CharacterProvider>
   );
 }

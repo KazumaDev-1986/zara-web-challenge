@@ -3,12 +3,12 @@ import { getCachedData, setCachedData } from '../db/cache';
 import env from '../config/env';
 import { CharacterDetailApiResponse } from '../types/CharacterDetail';
 
-export const fetchCharacters = async () => {
+export const fetchCharacters = async (limit: number = 50) => {
   const cacheKey = 'characters';
   const cachedData = await getCachedData(cacheKey);
   if (cachedData) return cachedData;
 
-  const response = await fetch(`${env.API_BASE_URL}/characters?limit=4&page=1`);
+  const response = await fetch(`${env.API_BASE_URL}/characters?limit=${limit}`);
   if (!response.ok) throw new Error('Error to fetch: fetchCharacters');
   const data: CharacterListApiResponse = await response.json();
 
