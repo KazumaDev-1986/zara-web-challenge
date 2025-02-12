@@ -2,7 +2,7 @@ import { Route, Switch } from 'wouter';
 import CharacterListPage from './pages/CharacterListPage';
 import CharacterDetailPage from './pages/CharacterDetailPage';
 import HomePage from './pages/HomePage';
-import { CharacterProvider } from './context/CharacterContext';
+import { CharacterProvider } from './context/CharacterProvider';
 import {
   urlCharacters,
   urlCharactersById,

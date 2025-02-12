@@ -18,7 +18,7 @@ async function getDB() {
   });
 }
 
-async function getCachedData(key: string) {
+export async function getCachedData(key: string) {
   const db = await getDB();
   const cached = await db.get(env.DB_STORE_NAME, key);
   if (cached && Date.now() - cached.timestamp < CACHE_EXPIRATION) {
@@ -27,17 +27,17 @@ async function getCachedData(key: string) {
   return null;
 }
 
-async function setCachedData(key: string, data: any) {
+export async function setCachedData(key: string, data: any) {
   const db = await getDB();
   await db.put(env.DB_STORE_NAME, { data, timestamp: Date.now() }, key);
 }
 
-export async function addFavorite(character: any) {
+export async function addFavorite(id: number) {
   const db = await getDB();
-  await db.put(env.DB_FAVORITES_STORE_NAME, character, character.id);
+  await db.put(env.DB_FAVORITES_STORE_NAME, id, id);
 }
 
-export async function removeFavorite(id: string) {
+export async function removeFavorite(id: number) {
   const db = await getDB();
   await db.delete(env.DB_FAVORITES_STORE_NAME, id);
 }
@@ -46,5 +46,3 @@ export async function getAllFavorites() {
   const db = await getDB();
   return (await db.getAll(env.DB_FAVORITES_STORE_NAME)) || [];
 }
-
-export { getCachedData, setCachedData };

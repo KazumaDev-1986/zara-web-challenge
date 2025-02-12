@@ -19,7 +19,7 @@ describe('NavBar', () => {
     const logo = container.querySelector('.logo');
     expect(logo).toBeInTheDocument();
 
-    const favoriteLink = container.querySelector('.favoriteLink');
+    const favoriteLink = container.querySelector('.favorite-link');
     expect(favoriteLink).toBeInTheDocument();
   });
 });

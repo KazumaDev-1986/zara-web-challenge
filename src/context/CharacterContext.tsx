@@ -1,40 +1,32 @@
-import {
-  createContext,
-  useReducer,
-  ReactNode,
-  Dispatch,
-  useEffect,
-} from 'react';
-import { getAllFavorites } from '../db/cache';
-import { Character } from '../types/CharacterList';
+import { createContext, Dispatch } from 'react';
 
 interface CharacterState {
-  favoritesCount: number;
+  favorites: number[];
 }
 
 const initialState: CharacterState = {
-  favoritesCount: 0,
+  favorites: [],
 };
 
 interface AddFavoriteAction {
   type: 'ADD_FAVORITE';
-  payload: Character;
+  payload: number;
 }
 
 interface RemoveFavoriteAction {
   type: 'REMOVE_FAVORITE';
-  payload: string;
+  payload: number;
 }
 
-interface SetFavoritesCountAction {
-  type: 'SET_FAVORITES_COUNT';
-  payload: number;
+interface SetFavoritesAction {
+  type: 'SET_FAVORITES';
+  payload: number[];
 }
 
 type CharacterAction =
   | AddFavoriteAction
   | RemoveFavoriteAction
-  | SetFavoritesCountAction;
+  | SetFavoritesAction;
 
 function characterReducer(
   state: CharacterState,
@@ -42,11 +34,14 @@ function characterReducer(
 ): CharacterState {
   switch (action.type) {
     case 'ADD_FAVORITE':
-      return { ...state, favoritesCount: state.favoritesCount + 1 };
+      return { ...state, favorites: [...state.favorites, action.payload] };
     case 'REMOVE_FAVORITE':
-      return { ...state, favoritesCount: state.favoritesCount - 1 };
-    case 'SET_FAVORITES_COUNT':
-      return { ...state, favoritesCount: action.payload };
+      return {
+        ...state,
+        favorites: state.favorites.filter((value) => value !== action.payload),
+      };
+    case 'SET_FAVORITES':
+      return { ...state, favorites: action.payload };
     default:
       return state;
   }
@@ -61,18 +56,4 @@ export const CharacterContext = createContext<
   CharacterContextProps | undefined
 >(undefined);
 
-export const CharacterProvider = ({ children }: { children: ReactNode }) => {
-  const [state, dispatch] = useReducer(characterReducer, initialState);
-
-  useEffect(() => {
-    getAllFavorites().then((favorites) => {
-      dispatch({ type: 'SET_FAVORITES_COUNT', payload: favorites.length });
-    });
-  }, []);
-
-  return (
-    <CharacterContext.Provider value={{ state, dispatch }}>
-      {children}
-    </CharacterContext.Provider>
-  );
-};
+export { initialState, characterReducer };

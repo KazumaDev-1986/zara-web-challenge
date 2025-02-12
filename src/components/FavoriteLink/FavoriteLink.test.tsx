@@ -12,17 +12,17 @@ jest.mock('wouter', () => ({
   Link: ({ children }: { children: React.ReactNode }) => <a>{children}</a>,
 }));
 
-describe('FavoriteLink', () => {
+describe('favorite-link', () => {
   it('renders the FavoriteLink correctly', () => {
     const { container } = render(<FavoriteLink />);
 
-    const linkElement = container.firstChild as HTMLElement;
-    expect(linkElement.tagName).toBe('A');
+    const buttonElement = container.firstChild as HTMLElement;
+    expect(buttonElement.tagName).toBe('BUTTON');
 
-    const iconElement = linkElement.querySelector('.icon');
+    const iconElement = buttonElement.querySelector('.icon');
     expect(iconElement).toBeInTheDocument();
 
-    const counterElement = linkElement.querySelector('.counter');
+    const counterElement = buttonElement.querySelector('.counter');
     expect(counterElement).toBeInTheDocument();
   });
 });

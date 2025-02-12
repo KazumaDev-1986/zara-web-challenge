@@ -1,6 +1,6 @@
 .navbar {
     height: var(--size-10-5);
-    background-color: var(--background-color);
+    background-color: var(--background-color-dark);
     padding-left: var(--size-6);
     padding-right: var(--size-6);
     

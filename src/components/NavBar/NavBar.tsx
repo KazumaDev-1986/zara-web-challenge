@@ -1,13 +1,17 @@
 import { FC } from 'react';
 import './NavBar.css';
 import FavoriteLink from '../FavoriteLink/FavoriteLink';
-import { Link } from 'wouter';
 import { urlCharacters } from '../../constants/appUrls';
 
 const NavBar: FC = () => {
+  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    window.location.href = urlCharacters;
+  };
+
   return (
     <nav className="navbar">
-      <Link className="link" href={urlCharacters}>
+      <button className="btn-logo" onClick={onClick}>
         <svg className="logo" width={130} height={52}>
           <rect fill="#EC1D24" width="100%" height="100%"></rect>
           <path
@@ -20,7 +24,7 @@ const NavBar: FC = () => {
             d="M31.5 48V4H21.291l-3.64 22.735L14.102 4H4v44h8V26.792L15.577 48h4.229l3.568-21.208V48z"
           ></path>
         </svg>
-      </Link>
+      </button>
 
       <FavoriteLink />
     </nav>

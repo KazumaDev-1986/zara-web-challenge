@@ -1,15 +1,19 @@
 import { FC, useContext } from 'react';
 import './FavoriteLink.css';
-import { Link } from 'wouter';
-import { urlCharacters } from '../../constants/appUrls';
+import { urlCharactersWithFavorites } from '../../constants/appUrls';
 import { CharacterContext } from '../../context/CharacterContext';
 
 const FavoriteLink: FC = () => {
   const ctx = useContext(CharacterContext);
 
+  const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    window.location.href = urlCharactersWithFavorites;
+  };
+
   return (
-    <Link href={`${urlCharacters}?favorites=1`}>
-      <div className="favoriteLink">
+    <button onClick={onClick}>
+      <div className="favorite-link">
         <svg
           className="icon"
           width="24"
@@ -25,9 +29,9 @@ const FavoriteLink: FC = () => {
             fill="#EC1D24"
           />
         </svg>
-        <span className="counter">{ctx?.state.favoritesCount ?? 0}</span>
+        <span className="counter">{ctx?.state.favorites.length ?? 0}</span>
       </div>
-    </Link>
+    </button>
   );
 };
 

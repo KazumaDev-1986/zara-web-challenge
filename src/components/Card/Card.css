@@ -1,0 +1,76 @@
+.card {
+  position: relative;
+}
+
+.container {
+  width: var(--size-21-5);
+  height: var(--size-23-75);
+  object-position: center center;
+  object-fit: contain;
+}
+
+.rectangle {
+  width: var(--size-21-5);
+  height: var(--size-7-75);
+  background-color: var(--background-color-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.red-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--primary-color);
+  height: var(--size-0-75);
+  transition: height 0.3s ease;
+}
+
+.card:hover .red-line {
+  height: 100%;
+}
+
+.card-text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: var(--size-10);
+}
+
+.green-triangle {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-left: var(--size-1-75) solid transparent;
+  border-bottom: var(--size-1-75) solid var(--background-color-white);
+  clip-path: polygon(0% 100%, 100% 100%, 100% 0%);
+}
+  
+.card-container {
+  margin-top: var(--size-0-75);
+  padding-left: var(--size-3);
+  padding-right: var(--size-3);
+  color: var(--text-color-light);
+  font-size: var(--size-2);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  position: relative;
+}
+
+.icon {
+  cursor: pointer;
+}
+
+.heart-active path {
+  transition: fill 0.3s ease-in-out;
+}
+
+.card:hover .heart-active path {
+  fill: white;
+}

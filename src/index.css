@@ -1,18 +1,29 @@
 :root {
   --primary-color: #ec1d24;
   --secondary-color: #000000;
-  --background-color: #000000;
+
+  --background-color-dark: #000000;
+  --background-color-light: #d9d9d9;
+  --background-color-white: #ffff;
 
   --text-color-light: #ffffff;
   --text-color-dark: #262626;
 
   --size-0: 0px;
+  --size-0-75: 6px;
   --size-1: 8px;
+  --size-1-75: 14px;
   --size-2: 16px;
+  --size-3: 24px;
   --size-4-75: 38px;
   --size-6: 48px;
   --size-7: 56px;
+  --size-7-75: 62px;
+  --size-10: 80px;
   --size-10-5: 84px;
+  --size-21-5: 172.5px;
+  --size-23-75: 189.97px;
+  --size-30-75: 245.97px;
 
   --font-size-1: 8px;
   --font-size-2: 16px;
@@ -21,8 +32,18 @@
 body {
   padding: 0;
   margin: 0;
+  font-family: 'Roboto Condensed', sans-serif;
 }
 
 a {
   text-decoration: none;
+}
+
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
 }
