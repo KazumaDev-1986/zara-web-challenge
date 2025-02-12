@@ -1,14 +1,23 @@
 import { FC, useContext } from 'react';
 import './FavoriteLink.css';
-import { urlCharactersWithFavorites } from '../../constants/appUrls';
+import { urlCharacters } from '../../constants/appUrls';
 import { CharacterContext } from '../../context/CharacterContext';
+import { fetchCharacters } from '../../api/characters.api';
 
 const FavoriteLink: FC = () => {
   const ctx = useContext(CharacterContext);
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
-    window.location.href = urlCharactersWithFavorites;
+
+    fetchCharacters().then((data) => {
+      const favorites = (data ?? []).filter((character) =>
+        ctx?.state.favorites.includes(character.id)
+      );
+
+      ctx?.dispatch({ type: 'SET_CHARACTERS', payload: favorites });
+      window.location.href = `${urlCharacters}?favorites=1`;
+    });
   };
 
   return (

@@ -59,7 +59,20 @@ const Card: FC<CardProps> = ({ id, image, name, isFavorite }) => {
       const actionName = isFavorite ? 'REMOVE_FAVORITE' : 'ADD_FAVORITE';
 
       fetch(id)
-        .then(() => ctx?.dispatch({ type: actionName, payload: id }))
+        .then(() => {
+          const search = location.search;
+          const searchParams = new URLSearchParams(search);
+          const isFavorites = searchParams.get('favorites');
+
+          if (isFavorites) {
+            ctx?.dispatch({
+              type: 'REMOVE_FAVORITES_AND_UPDATE_CHARACTERS',
+              payload: id,
+            });
+          } else {
+            ctx?.dispatch({ type: actionName, payload: id });
+          }
+        })
         .catch((error) => console.error(error))
         .finally(() => setIsLoading(false));
     }

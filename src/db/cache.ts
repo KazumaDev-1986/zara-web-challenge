@@ -1,6 +1,6 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { openDB } from 'idb';
 import env from '../config/env';
+import { Character } from '../types/CharacterList';
 
 const CACHE_EXPIRATION = 24 * 60 * 60 * 1000;
 
@@ -18,7 +18,7 @@ async function getDB() {
   });
 }
 
-export async function getCachedData(key: string) {
+export async function getCachedData(key: string): Promise<Character[] | null> {
   const db = await getDB();
   const cached = await db.get(env.DB_STORE_NAME, key);
   if (cached && Date.now() - cached.timestamp < CACHE_EXPIRATION) {
@@ -27,7 +27,10 @@ export async function getCachedData(key: string) {
   return null;
 }
 
-export async function setCachedData(key: string, data: any) {
+export async function setCachedData(
+  key: string,
+  data: Character[]
+): Promise<void> {
   const db = await getDB();
   await db.put(env.DB_STORE_NAME, { data, timestamp: Date.now() }, key);
 }

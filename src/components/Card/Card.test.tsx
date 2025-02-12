@@ -11,7 +11,7 @@ jest.mock('../../db/cache', () => ({
 describe('Card Component', () => {
   const mockDispatch = jest.fn();
   const mockContextValue = {
-    state: { favorites: [] },
+    state: { favorites: [], characters: [] },
     dispatch: mockDispatch,
   };
 
