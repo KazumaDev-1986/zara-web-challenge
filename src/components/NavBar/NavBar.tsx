@@ -1,9 +1,9 @@
 import { FC } from 'react';
 import './NavBar.css';
-import FavoriteLink from '../FavoriteLink/FavoriteLink';
+import { FavoriteLink } from '../FavoriteLink';
 import { urlCharacters } from '../../constants/appUrls';
 
-const NavBar: FC = () => {
+export const NavBar: FC = () => {
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
     window.location.href = urlCharacters;
@@ -30,5 +30,3 @@ const NavBar: FC = () => {
     </nav>
   );
 };
-
-export default NavBar;

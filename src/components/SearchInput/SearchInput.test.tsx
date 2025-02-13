@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import SearchInput from './SearchInput';
+import { SearchInput } from './SearchInput';
 
 jest.mock('../../config/env', () => ({
   API_BASE_URL: 'http://localhost:3000',

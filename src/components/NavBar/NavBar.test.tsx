@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import NavBar from './NavBar';
+import { NavBar } from './NavBar';
 
 jest.mock('../../config/env', () => ({
   API_BASE_URL: 'http://localhost:3000',

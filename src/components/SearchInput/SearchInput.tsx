@@ -6,7 +6,7 @@ import {
 } from '../../api/characters.api';
 import { CharacterContext } from '../../context/CharacterContext';
 
-const SearchInput: FC = () => {
+export const SearchInput: FC = () => {
   const ctx = useContext(CharacterContext);
   const callbackRef = useRef<NodeJS.Timeout | null>(null);
 
@@ -65,5 +65,3 @@ const SearchInput: FC = () => {
     </div>
   );
 };
-
-export default SearchInput;

@@ -1,5 +1,5 @@
 import { render, screen } from '@testing-library/react';
-import Grid from './Grid';
+import { Grid } from './Grid';
 
 describe('Grid Component', () => {
   it('should render children inside the grid container', () => {

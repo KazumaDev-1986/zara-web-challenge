@@ -1,5 +1,5 @@
 import { createContext, Dispatch } from 'react';
-import { Character } from '../types/CharacterList';
+import { Character } from '../types/characters';
 
 interface CharacterState {
   favorites: number[];

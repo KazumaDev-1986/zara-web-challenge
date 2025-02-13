@@ -1,6 +1,5 @@
 import { FC, ReactNode } from 'react';
-import NavBar from '../components/NavBar/NavBar';
-import './RootLayout.css';
+import { NavBar } from '../components/NavBar';
 
 interface RootLoyoutProps {
   children: ReactNode;

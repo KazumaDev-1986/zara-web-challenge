@@ -1,3 +1,20 @@
+interface OriginPlanet {
+  id: number;
+  name: string;
+  isDestroyed: boolean;
+  description: string;
+  image: string;
+  deletedAt: string | null;
+}
+
+interface Transformation {
+  id: number;
+  name: string;
+  image: string;
+  ki: string;
+  deletedAt: string | null;
+}
+
 interface Character {
   id: number;
   name: string;
@@ -9,6 +26,8 @@ interface Character {
   image: string;
   affiliation: string;
   deletedAt: string | null;
+  originPlanet: OriginPlanet | null;
+  transformations: Transformation[] | null;
 }
 
 interface Meta {
@@ -26,10 +45,10 @@ interface Links {
   last: string;
 }
 
-interface CharacterListApiResponse {
+interface CharacterApiResponse {
   items: Character[];
   meta: Meta;
   links: Links;
 }
 
-export type { Character, CharacterListApiResponse };
+export type { Character, CharacterApiResponse, Transformation };

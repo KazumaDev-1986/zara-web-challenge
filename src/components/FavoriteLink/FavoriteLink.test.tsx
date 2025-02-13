@@ -1,5 +1,5 @@
 import { render } from '@testing-library/react';
-import FavoriteLink from './FavoriteLink';
+import { FavoriteLink } from './FavoriteLink';
 
 jest.mock('../../config/env', () => ({
   API_BASE_URL: 'http://localhost:3000',

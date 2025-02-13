@@ -1,27 +1,22 @@
 import { FC, useContext, useState } from 'react';
 import { CharacterContext } from '../../context/CharacterContext';
 import { addFavorite, removeFavorite } from '../../db/cache';
-import { urlCharactersByIdBuilder } from '../../constants/appUrls';
-import { Link } from 'wouter';
-import './Card.css';
 
-interface CardProps {
+interface TogglefavoriteButtonProps {
   id: number;
-  image: string;
-  name: string;
-  isFavorite: boolean;
 }
 
-export const Card: FC<CardProps> = ({ id, image, name, isFavorite }) => {
+export const ToggleFavoriteButton: FC<TogglefavoriteButtonProps> = ({ id }) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const ctx = useContext(CharacterContext);
+  const isFavorite = ctx?.state.favorites.includes(id);
 
   const heartActive = (
     <>
       <svg
         className="heart-active"
-        width="12"
-        height="10.84"
+        width="24"
+        height="21.68"
         viewBox="0 0 24 22"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -39,8 +34,8 @@ export const Card: FC<CardProps> = ({ id, image, name, isFavorite }) => {
   const heartInactive = (
     <>
       <svg
-        width="12"
-        height="10.84"
+        width="24"
+        height="21.68"
         viewBox="0 0 26 25"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -82,18 +77,8 @@ export const Card: FC<CardProps> = ({ id, image, name, isFavorite }) => {
   };
 
   return (
-    <Link className="card" href={urlCharactersByIdBuilder(id.toString())}>
-      <img className="card-image" src={image} alt={`image_of_${name}}`} />
-      <div className="rectangle">
-        <div className="red-line" />
-        <div className="card-container">
-          <p className="card-text">{name}</p>
-          <button className="icon" onClick={onToggleFavorite}>
-            {isFavorite ? heartActive : heartInactive}
-          </button>
-        </div>
-        <div className="white-triangle" />
-      </div>
-    </Link>
+    <button className="icon" onClick={onToggleFavorite}>
+      {isFavorite ? heartActive : heartInactive}
+    </button>
   );
 };

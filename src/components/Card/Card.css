@@ -3,7 +3,7 @@
   background-color: var(--background-color-gray);
 }
 
-.container {
+.card-image {
   width: var(--size-21-5);
   height: var(--size-23-75);
   object-position: center center;
@@ -39,7 +39,7 @@
   max-width: var(--size-10);
 }
 
-.green-triangle {
+.white-triangle {
   position: absolute;
   bottom: 0;
   right: 0;

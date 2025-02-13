@@ -1,0 +1,61 @@
+.transformations {
+    display: flex;
+    flex-direction: column;
+}
+
+.transformation-card-container{
+    display: flex;
+    gap: var(--size-2);
+    padding-top: var(--size-2);
+    padding-bottom: var(--size-3);
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+}
+
+.transformation-card-container::-webkit-scrollbar {
+    height: var(--size-0-5);
+}
+
+.transformation-card-container::-webkit-scrollbar-track {
+    background: var(--background-color-light);
+    border-radius: var(--size-0);
+}
+
+.transformation-card-container::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: var(--size-0);
+}
+
+.transformation-card-container::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-color);
+}
+
+.transformation-card{
+    width: var(--size-22-4);
+    display: flex;
+    flex-direction: column;
+}
+
+.transform-image{
+    width: var(--size-22-4);
+    height: var(--size-33-6);
+    object-position: center center;
+    object-fit: contain;
+    background-color: var(--background-color-gray);
+}
+
+.transform-text {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: var(--size-2);
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: var(--size-22-4);
+}
+
+.transform-ki-text{
+    font-weight: 400;
+    font-size: var(--size-1-5);
+}

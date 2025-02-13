@@ -1,6 +1,6 @@
 import { openDB } from 'idb';
 import env from '../config/env';
-import { Character } from '../types/CharacterList';
+import { Character } from '../types/characters';
 
 const CACHE_EXPIRATION = 24 * 60 * 60 * 1000;
 

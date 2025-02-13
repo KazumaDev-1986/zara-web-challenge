@@ -1,5 +1,5 @@
 import { render, screen, fireEvent, act } from '@testing-library/react';
-import Card from './Card';
+import { Card } from './Card';
 import { CharacterContext } from '../../context/CharacterContext';
 import { addFavorite, removeFavorite } from '../../db/cache';
 

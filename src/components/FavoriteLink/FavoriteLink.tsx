@@ -4,7 +4,7 @@ import { urlCharacters } from '../../constants/appUrls';
 import { CharacterContext } from '../../context/CharacterContext';
 import { fetchCharacters } from '../../api/characters.api';
 
-const FavoriteLink: FC = () => {
+export const FavoriteLink: FC = () => {
   const ctx = useContext(CharacterContext);
 
   const onClick = (e: React.MouseEvent<HTMLButtonElement>) => {
@@ -43,5 +43,3 @@ const FavoriteLink: FC = () => {
     </button>
   );
 };
-
-export default FavoriteLink;
