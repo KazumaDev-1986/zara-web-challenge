@@ -9,6 +9,18 @@
     overflow: hidden;
 
     background-color: var(--background-color-dark);
+    position: relative; 
+}
+
+.resume-container::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: var(--size-3); 
+    height: var(--size-3); 
+    background-color: white;
+    clip-path: polygon(100% 0, 100% 100%, 0 100%); 
 }
 
 .resume-image {
@@ -19,7 +31,7 @@
     object-fit: contain;
 }
 
-.info-container{
+.info-container {
     max-width: var(--size-80);
     min-height: var(--size-40);
     padding: var(--size-2) var(--size-4) var(--size-2) var(--size-4);
@@ -36,17 +48,17 @@
     text-transform: uppercase;
     font-size: var(--size-5);
     font-weight: 700;
-    color:var(--text-color-light);
+    color: var(--text-color-light);
 }
 
 .info-description {
     font-size: var(--size-2);
     font-weight: 400;
-    color:var(--text-color-light);
+    color: var(--text-color-light);
 }
 
 @media (max-width: 1024px) {
     .resume-container {
         flex-direction: column;
     }
-  }
+}

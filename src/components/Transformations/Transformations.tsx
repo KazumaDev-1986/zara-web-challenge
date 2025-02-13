@@ -23,7 +23,7 @@ export const Transformations: FC<TransformationsProps> = ({ data }) => {
             </div>
           ))
         ) : (
-          <p>{t('notHaveTransformations')}</p>
+          <p className="not-transformations">{t('notHaveTransformations')}</p>
         )}
       </div>
     </div>

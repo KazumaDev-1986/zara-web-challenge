@@ -2,5 +2,7 @@
     "favorites": "favoritos",
     "searchACharacter": "buscar un personaje...",
     "transformations": "transformaciones",
-    "notHaveTransformations": "no tiene transformaciones"
+    "notHaveTransformations": "no tiene transformaciones.",
+    "result_one": "{{count}} resultado",
+    "result_other": "{{count}} resultados"
 }

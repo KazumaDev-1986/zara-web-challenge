@@ -92,7 +92,6 @@ export const Card: FC<CardProps> = ({ id, image, name, isFavorite }) => {
             {isFavorite ? heartActive : heartInactive}
           </button>
         </div>
-        <div className="white-triangle" />
       </div>
     </Link>
   );

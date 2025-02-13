@@ -62,7 +62,7 @@ export const SearchInput: FC = () => {
         />
       </div>
       <span className="search-result">
-        {(ctx?.state.characters ?? []).length} Results
+        {t('result', { count: (ctx?.state.characters ?? []).length })}
       </span>
     </div>
   );
