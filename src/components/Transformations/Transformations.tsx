@@ -2,15 +2,17 @@ import { FC } from 'react';
 import { Transformation } from '../../types/characters';
 import './Transformations.css';
 import { Title } from '../Title';
+import { useTranslation } from 'react-i18next';
 
 interface TransformationsProps {
   data: Transformation[];
 }
 
 export const Transformations: FC<TransformationsProps> = ({ data }) => {
+  const { t } = useTranslation();
   return (
     <div className="transformations global-container">
-      <Title text="Transformaciones" />
+      <Title text={t('transformations')} />
       <div className="transformation-card-container">
         {data.length > 0 ? (
           data.map((transformation) => (
@@ -21,7 +23,7 @@ export const Transformations: FC<TransformationsProps> = ({ data }) => {
             </div>
           ))
         ) : (
-          <p>No tiene transformaciones</p>
+          <p>{t('notHaveTransformations')}</p>
         )}
       </div>
     </div>

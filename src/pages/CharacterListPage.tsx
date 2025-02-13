@@ -4,9 +4,11 @@ import { Grid } from '../components/Grid';
 import { Card } from '../components/Card';
 import { SearchInput } from '../components/SearchInput';
 import { Title } from '../components/Title/Title';
+import { useTranslation } from 'react-i18next';
 
 const CharacterListPage = () => {
   const ctx = useContext(CharacterContext);
+  const { t } = useTranslation();
   const search = location.search;
   const searchParams = new URLSearchParams(search);
   const isFavorites = searchParams.get('favorites');
@@ -15,7 +17,7 @@ const CharacterListPage = () => {
   const favorites = ctx?.state.favorites ?? [];
   return (
     <div className="global-container">
-      {isFavorites ? <Title text="Favorites" /> : ''}
+      {isFavorites ? <Title text={t('favorites')} /> : ''}
       <SearchInput />
       <Grid>
         {characters.map((character) => (

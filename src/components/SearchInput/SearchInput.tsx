@@ -5,10 +5,12 @@ import {
   fetchCharactersByName,
 } from '../../api/characters.api';
 import { CharacterContext } from '../../context/CharacterContext';
+import { useTranslation } from 'react-i18next';
 
 export const SearchInput: FC = () => {
   const ctx = useContext(CharacterContext);
   const callbackRef = useRef<NodeJS.Timeout | null>(null);
+  const { t } = useTranslation();
 
   const onSearch = useCallback(
     (value: string) => {
@@ -55,7 +57,7 @@ export const SearchInput: FC = () => {
         <input
           className="search-input"
           type="text"
-          placeholder="Search a character..."
+          placeholder={t('searchACharacter')}
           onChange={onChange}
         />
       </div>
