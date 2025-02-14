@@ -2,6 +2,10 @@
 
 Este proyecto ha sido creado como parte de una propuesta para participar en una oferta laboral. El objetivo es implementar una aplicación frontend que consta de dos vistas principales. La primera muestra una lista de personajes con un buscador para filtrar los resultados. La segunda vista presenta el detalle del personaje seleccionado.
 
+## Enlace de la aplicación desplegada
+
+- [Enlace](https://zara-web-challenge-pi.vercel.app)
+
 ## Tecnologías y Herramientas Utilizadas
 
 - **React**: Como framework base para la creación de las interfaces y componentes reutilizables.
@@ -12,6 +16,7 @@ Este proyecto ha sido creado como parte de una propuesta para participar en una 
 - **Jest**: Para las pruebas unitarias.
 - **ESLint**: Para garantizar que el código siga unas convenciones definidas y el uso correcto de los hooks en React.
 - **Prettier**: Para garantizar que todo el código esté formateado de manera consistente.
+- **Vercel**: Plataforma de despliegue seleccionada.
 
 ## Arquitectura y Patrones
 
@@ -25,6 +30,16 @@ Este proyecto ha sido creado como parte de una propuesta para participar en una 
 - **Vite como Bundler**: Para aprovechar las características más modernas de los navegadores (como ES Modules), lo que permite una experiencia de desarrollo más fluida.
 - **Testing**: Para la verificación del correcto comportamiento de los componentes.
 - **Internacionalización (i18next)**: Para la gestión de idiomas, ya que esto facilita la extensión futura de la aplicación para incluir más idiomas si es necesario.
+
+## Mejoras pendientes
+
+- **Decimales en los tokens**:
+
+- **Cache**:
+
+- **Cancelación de peticiones**:
+
+- **SSR**:
 
 ## Scripts
 
